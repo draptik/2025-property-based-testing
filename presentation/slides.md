@@ -93,5 +93,41 @@ let ``reversing a list twice returns original list`` () =
 </div>
 
 ---
+
+## Playground magic move
+
+````md magic-move
+```fsharp
+[<Fact>]
+let ``reversing a list twice returns original list`` () =
+  let checkFn (aList: int list) =
+    let actual = aList |> reverseList |> reverseList
+    let expected = aList
+    test <@ actual = expected @> // Assertion
+
+  Check.Quick checkFn // PBT Magic
+```
+```fsharp
+[<Fact>]
+let ``reversing a list twice returns original list`` () =
+  let checkFn (aList: int list) =
+    let actual = aList |> reverseList |> reverseList
+    test <@ actual = aList @> // Assertion
+
+  Check.Quick checkFn // PBT Magic
+```
+```fsharp
+[<Fact>]
+let ``reversing a list twice returns original list`` () =
+  let checkFn (aList: int list) =
+    test <@ aList |> reverseList |> reverseList = aList @> // Assertion
+
+  Check.Quick checkFn // PBT Magic
+```
+````
+
+To navigate backwards, use arrow-left.
+
+---
 src: ./pages/99-end.md
 ---
