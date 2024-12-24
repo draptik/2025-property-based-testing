@@ -6,3 +6,13 @@
     background-color: lightgray;
     color: black;
 }
+
+.badge {
+  position: relative;
+}
+
+/* inspired by https://github.com/slidevjs/slidev/issues/385 */
+.badge::before {
+  content: attr(data-language);
+  @apply absolute z-10 rounded-xl bg-light-500 p-1 -top-1 right-0 border border-gray-300 text-gray-500 font-normal text-sm;
+}

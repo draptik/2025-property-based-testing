@@ -2,7 +2,7 @@
 theme: ./mathema-2023
 defaults:
   layout: "default-with-footer"
-title: TODO Title
+title: Property-Based Testing
 occasion: "TODO occasion"
 occasionLogoUrl: "./images/logo_socrates.png"
 company: "MATHEMA GmbH"
@@ -31,16 +31,25 @@ Most testing strategies are "Example based".
 
 Example:
 
+<div class="badge" data-language="C#">
+
 ```cs
 public void Add(int a, int b) => a + b;
 ```
+
+</div>
+<div class="badge" data-language="C#">
 
 ```cs
 [Fact]
 public void Add_works() => Add(1, 2).Should().Be(3);
 ```
 
+</div>
+
 More example data with parameterized test:
+
+<div class="badge" data-language="C#">
 
 ```cs
 [Theory]
@@ -49,14 +58,22 @@ More example data with parameterized test:
 public void Add_works(int a, int b, int expected) => Add(a, b).Should().Be(expected);
 ```
 
+</div>
+
 ---
 
 ## PBT Hello World
+
+<div class="badge" data-language="F#">
 
 ```fsharp
 let reverseList (aList: int list) : int list =
   failwith "TODO"
 ```
+
+</div>
+
+<div class="badge" data-language="F#">
 
 ```fsharp
 open Xunit
@@ -72,6 +89,8 @@ let ``reversing a list twice returns original list`` () =
 
   Check.Quick checkFn // PBT Magic
 ```
+
+</div>
 
 ---
 src: ./pages/99-end.md
