@@ -50,5 +50,29 @@ public void Add_works(int a, int b, int expected) => Add(a, b).Should().Be(expec
 ```
 
 ---
+
+## PBT Hello World
+
+```fsharp
+let reverseList (aList: int list) : int list =
+  failwith "TODO"
+```
+
+```fsharp
+open Xunit
+open FsCheck         // PBT library
+open Swensen.Unquote // Assertion library
+
+[<Fact>]
+let ``reversing a list twice returns original list`` () =
+  let checkFn (aList: int list) =
+    let actual = aList |> reverseList |> reverseList
+    let expected = aList
+    test <@ actual = expected @> // Assertion
+
+  Check.Quick checkFn // PBT Magic
+```
+
+---
 src: ./pages/99-end.md
 ---
