@@ -31,25 +31,16 @@ Most testing strategies are "Example based".
 
 Example:
 
-<div class="badge" data-language="C#">
-
 ```cs
 public void Add(int a, int b) => a + b;
 ```
-
-</div>
-<div class="badge" data-language="C#">
 
 ```cs
 [Fact]
 public void Add_works() => Add(1, 2).Should().Be(3);
 ```
 
-</div>
-
 More example data with parameterized test:
-
-<div class="badge" data-language="C#">
 
 ```cs
 [Theory]
@@ -58,22 +49,18 @@ More example data with parameterized test:
 public void Add_works(int a, int b, int expected) => Add(a, b).Should().Be(expected);
 ```
 
-</div>
-
 ---
 
-## PBT Hello World
+## PBT Hello World (in .NET)
 
-<div class="badge" data-language="F#">
+We start without a testing framework like xUnit/NUnit/MSTest.
+
+Let's start with an interactive F# session (aka `fsi/fsx`)!
 
 ```fsharp
 let reverseList (aList: int list) : int list =
   failwith "TODO"
 ```
-
-</div>
-
-<div class="badge" data-language="F#">
 
 ```fsharp
 open Xunit
@@ -90,8 +77,6 @@ let ``reversing a list twice returns original list`` () =
   Check.Quick checkFn // PBT Magic
 ```
 
-</div>
-
 ---
 
 ## Playground magic move
@@ -107,6 +92,7 @@ let ``reversing a list twice returns original list`` () =
 
   Check.Quick checkFn // PBT Magic
 ```
+
 ```fsharp
 [<Fact>]
 let ``reversing a list twice returns original list`` () =
@@ -116,6 +102,7 @@ let ``reversing a list twice returns original list`` () =
 
   Check.Quick checkFn // PBT Magic
 ```
+
 ```fsharp
 [<Fact>]
 let ``reversing a list twice returns original list`` () =

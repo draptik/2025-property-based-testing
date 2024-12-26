@@ -1,18 +1,26 @@
+@import 'prism-theme-vars/base.css';
+@import 'prism-theme-vars/marker.css';
+
 .slidev-code * {
-    font-family: JetBrains;
+  font-family: JetBrains;
 }
 
-.slidev-code .token.comment {
-    background-color: lightgray;
-    color: black;
+/* Show language marker in code blocks.
+ * This doesn't work in `magic-move` blocks, because those blocks use a different css layout.
+ */
+pre[class*='language-'] {
+  @apply p-2 relative;
 }
 
-.badge {
-  position: relative;
+[class*='language-']::before {
+  @apply absolute z-10 bg-dark-50 p-1 top-0 right-0 border-gray-500 text-light-500 font-bold opacity-100;
 }
 
-/* inspired by https://github.com/slidevjs/slidev/issues/385 */
-.badge::before {
-  content: attr(data-language);
-  @apply absolute z-10 rounded-xl bg-light-500 p-1 -top-1 right-0 border border-gray-300 text-gray-500 font-normal text-sm;
+[class~='language-fsharp']::before {
+  content: 'F#';
 }
+
+[class~='language-cs']::before {
+  content: 'C#';
+}
+
