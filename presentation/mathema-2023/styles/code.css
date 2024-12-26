@@ -1,9 +1,14 @@
 @import 'prism-theme-vars/base.css';
-@import 'codemirror-theme-vars/base.css';
+@import 'prism-theme-vars/marker.css';
 @import 'prism-theme-vars/to-codemirror.css';
+@import 'codemirror-theme-vars/base.css';
 
 :root {
   --prism-font-family: var(--slidev-code-font-family);
+}
+
+.slidev-code * {
+  font-family: JetBrains;
 }
 
 html:not(.dark) {
@@ -54,8 +59,42 @@ html.dark {
   --prism-selection-background: #444444;
 }
 
+/* Show language marker in code blocks.
+ * This doesn't work in `magic-move` blocks, because those blocks use a different css layout.
+ */
 pre[class*='language-'] {
-  @apply p-2;
+  @apply p-2 relative;
+}
+
+[class*='language-']::before {
+  @apply
+    absolute
+    z-10
+    p-1
+    top-0
+    right-0
+    border
+    rounded
+    opacity-60
+    border-slate-400
+    bg-slate-200
+    text-black-100
+    font-bold
+    leading-none
+    font-sans;
+}
+
+/*
+ * Predefined languages: https://github.com/antfu/prism-theme-vars/blob/master/marker.css
+ *
+ * Add other languages here:
+ */
+[class~='language-fsharp']::before {
+  content: 'F#';
+}
+
+[class~='language-cs']::before {
+  content: 'C#';
 }
 
 :not(pre) > code {
