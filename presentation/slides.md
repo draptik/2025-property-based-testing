@@ -9,7 +9,7 @@ company: "MATHEMA GmbH"
 presenter: "Patrick Drechsler"
 contact: "patrick.drechsler@mathema.de"
 info:
-  TODO info
+  Property-Based Testing
 canvasWidth: 980
 layout: cover
 transition: slide-left
@@ -25,19 +25,62 @@ src: ./pages/01-intro.md
 
 ---
 
+## Roadmap 1/2
+
+- Example-based Testing
+- Hello-World FsCheck
+- `Property` attribute
+- Arbitraries, Generators, and Shrinkers
+- Strategies
+- CsCheck: an alternative?
+- Summary
+
+---
+
+## Roadmap 2/2
+
+| PBT framework | Test framework | Language | PBT feature |
+| --- | --- | --- | --- |
+| FsCheck | Xunit | F# | Check.Quick / Check.QuickThrowOnFailure |
+| FsCheck | Xunit | C# | Check.Quick / Check.QuickThrowOnFailure |
+| FsCheck | NUnit | F# | Check.Quick / Check.QuickThrowOnFailure |
+| FsCheck | NUnit | C# | Check.Quick / Check.QuickThrowOnFailure |
+| FsCheck | Xunit | F# | Property attribute (no arguments) |
+| FsCheck | Xunit | F# | Property attribute (with primitive arguments) |
+| FsCheck | Xunit | F# | Properties, Arbitraries and Generators |
+| FsCheck | Xunit | F# | Strategies: Randomness, Invariants, Nuclear, There-And-Back, etc |
+| CsCheck | Xunit | F# | Syntax? |
+
+<style>
+  table {
+    font-size: 8px;
+    line-height: 8px;
+}
+</style>
+
+---
+layout: two-cols-header
+---
+
 ## Example based tests
 
 Most testing strategies are "Example based".
 
+::left::
+
 Example:
 
 ```cs
-public void Add(int a, int b) => a + b;
+public void Add(int a, int b)
+  => a + b;
 ```
+
+::right::
 
 ```cs
 [Fact]
-public void Add_works() => Add(1, 2).Should().Be(3);
+public void Add_works()
+  => Add(1, 2).Should().Be(3);
 ```
 
 More example data with parameterized test:
@@ -46,7 +89,8 @@ More example data with parameterized test:
 [Theory]
 [InlineData(1, 2, 3)]
 [InlineData(0, 1, 1)]
-public void Add_works(int a, int b, int expected) => Add(a, b).Should().Be(expected);
+public void Add_works(int a, int b, int expected)
+  => Add(a, b).Should().Be(expected);
 ```
 
 ---
@@ -114,6 +158,50 @@ let ``reversing a list twice returns original list`` () =
 ````
 
 To navigate backwards, use arrow-left.
+
+---
+
+## Playground continued
+
+````md magic-move
+
+```fsharp
+open Xunit
+open FsCheck
+
+[<Fact>]
+let ``reversing a list twice returns original list`` () =
+  let checkFn (aList: int list) =
+    let actual = aList |> List.rev |> List.rev
+    test <@ actual = aList @>
+
+  Check.Quick checkFn
+```
+
+```fsharp
+open Xunit
+open FsCheck
+
+[<Fact>]
+let ``reversing a list twice returns original list`` () =
+  let checkFn (aList: int list) =
+    let actual = aList |> List.rev |> List.rev
+    test <@ actual = aList @>
+
+  Check.QuickThrowOnFailure checkFn
+```
+
+```fsharp
+open Xunit
+open FsCheck
+open FsCheck.Xunit
+
+[<Property>]
+let ``reversing a list twice returns original list`` (aList: int list) =
+    let actual = aList |> List.rev |> List.rev
+    actual = aList
+```
+````
 
 ---
 src: ./pages/99-end.md
