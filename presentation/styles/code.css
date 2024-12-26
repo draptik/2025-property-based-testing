@@ -13,9 +13,28 @@ pre[class*='language-'] {
 }
 
 [class*='language-']::before {
-  @apply absolute z-10 bg-dark-50 p-1 top-0 right-0 border-gray-500 text-light-500 font-bold opacity-100;
+  @apply
+    absolute
+    z-10
+    p-1
+    top-0
+    right-0
+    border
+    rounded
+    opacity-60
+    border-slate-400
+    bg-slate-200
+    text-black-100
+    font-bold
+    leading-none
+    font-sans;
 }
 
+/*
+ * Predefined languages: https://github.com/antfu/prism-theme-vars/blob/master/marker.css
+ *
+ * Add other languages here:
+ */
 [class~='language-fsharp']::before {
   content: 'F#';
 }
