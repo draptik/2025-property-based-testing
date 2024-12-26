@@ -1,6 +1,6 @@
 # Property-based Testing
 
-### Eine Einführung in in FsCheck und CsCheck
+### Eine Einführung in FsCheck und CsCheck
 
 Patrick Drechsler
 
