@@ -54,4 +54,17 @@
       font-size: 1.1em;
     }
   }
+
+  /* Add some extra space between left and right side when working with code blocks. */
+  &.two-cols-header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr auto !important; /* No idea why I need important here... */
+    column-gap: 20px; /* Adjust the gap size as needed */
+
+    .col-bottom {
+      align-self: end;
+      grid-area: 3 / 1 / 4 / 3; /* Adjust this to correctly place the bottom area */
+    }
+  }
 }
