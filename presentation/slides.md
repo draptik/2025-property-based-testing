@@ -75,6 +75,8 @@ public void Add(int a, int b)
   => a + b;
 ```
 
+Writing tests covering the corner cases is simple.
+
 ::right::
 
 ```cs
@@ -202,6 +204,68 @@ let ``reversing a list twice returns original list`` (aList: int list) =
     actual = aList
 ```
 ````
+
+---
+
+## Gilded Rose
+
+TODO: Check if this is a good example for this talk...
+
+Use <https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/main/csharp.xUnit> repository
+
+---
+
+## Strategies
+
+- Randomness
+- Nuclear Explosion
+- There And Back Again
+- Test Oracle
+
+---
+
+### Strategy: Randomness
+
+Examples:
+
+- "Pick One"
+
+---
+
+### Strategy: Nuclear Explosion
+
+Test that nothing throws
+
+---
+
+### Strategy: There And Back Again
+
+Examples:
+
+- Serialize/Deserialize
+
+---
+
+### Strategy: Test Oracle
+
+Compare 2 different implementations
+
+---
+
+## TestContainers and PBT: A good idea?
+
+TODO
+
+---
+
+## F# Crash Course
+
+- Syntax: OCaml based
+- Immutable by default
+- Piping
+- Records & Discriminated Unions
+- Type Inference
+- Currying / Partial Application
 
 ---
 src: ./pages/99-end.md
