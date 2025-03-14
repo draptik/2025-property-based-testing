@@ -10,13 +10,18 @@
 Slides 👇
 
 - QR Code or
-- <https://draptik.github.io/2024-11-ddc-mutation-testing/>
+- <https://draptik.github.io/2025-05-adc-pbt/>
 - sample code:
-  <https://github.com/draptik/2024-mutation-testing>
+  <https://github.com/draptik/2025-property-based-testing>
 
 <img
   class="absolute top-10 right-30 h-70"
   src="/images/slides.png"
+/>
+
+<img
+  class="absolute bottom-20 right-50 h-30"
+  src="/images/anti-nazi.png"
 />
 
 <p style="font-size:0.75em">
