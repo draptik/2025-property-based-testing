@@ -10,7 +10,7 @@
 Slides 👇
 
 - QR Code or
-- <https://draptik.github.io/2025-05-adc-pbt/>
+- <https://draptik.github.io/2025-05-adc-property-based-testing/>
 - sample code:
   <https://github.com/draptik/2025-property-based-testing>
 
