@@ -15,6 +15,6 @@
 />
 
 <img
-  class="absolute bottom-20 right-50 h-30"
+  class="absolute bottom-20 right-50 h-30 custom-slow-pulse"
   src="/images/anti-nazi.png"
 />
