@@ -3,8 +3,8 @@ theme: ./mathema-2023
 defaults:
   layout: "default-with-footer"
 title: Property-Based Testing
-occasion: "TODO occasion"
-occasionLogoUrl: "./images/logo_socrates.png"
+occasion: "ADC 2025"
+occasionLogoUrl: "./images/logo-adc.png"
 company: "MATHEMA GmbH"
 presenter: "Patrick Drechsler"
 contact: "patrick.drechsler@mathema.de"
@@ -78,7 +78,7 @@ Writing tests covering the corner cases is simple.
 
 ::right::
 
-```cs
+```csharp
 [Fact]
 public void Add_works()
   => Add(1, 2).Should().Be(3);
