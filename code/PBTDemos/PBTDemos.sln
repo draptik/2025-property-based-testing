@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# 
+#
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D51AF082-815B-492B-81B8-B3553BE9BF0C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRoseCsharp.Tests", "tests\GildedRoseCsharp.Tests\GildedRoseCsharp.Tests.csproj", "{73C107D8-5699-4640-AA89-BD35BE9E1024}"
@@ -10,6 +10,16 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7D01D08A-7514-4649-B6CF-98919B7E55B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBTDemos.GildedRose", "src\PBTDemos.GildedRose\PBTDemos.GildedRose.csproj", "{18BDDAE0-B11A-4888-A724-60B143E7BCF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{B6BE98DF-F4B3-4CBF-965F-EAAD84FAF8DF}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+		global.json = global.json
+		PBTDemos.sln = PBTDemos.sln
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
