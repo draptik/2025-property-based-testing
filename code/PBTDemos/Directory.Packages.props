@@ -30,4 +30,4 @@
     <PackageVersion Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
 </Project>
-<!-- vim:set filetype=xml : -->
+<!-- vim: set filetype=xml : -->

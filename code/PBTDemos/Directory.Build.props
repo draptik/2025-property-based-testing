@@ -15,4 +15,4 @@
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
 </Project>
-  <!-- vim:set filetype=xml : -->
+<!-- vim: set filetype=xml : -->
