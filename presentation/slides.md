@@ -23,12 +23,6 @@ src: ./pages/01-intro.md
 ---
 
 ---
-
-## In the Grand-Testing Universe - where are we?
-
-TODO: Add a mermaid diagram, showing Testing, TDD, Approval-Testing, and finally PBT.
-
----
 layout: two-cols-header
 ---
 
@@ -65,30 +59,97 @@ public void Add_works(int a, int b, int expected)
   => Add(a, b).Should().Be(expected);
 ```
 
-We aren't catching corner cases here...
-
+---
+layout: two-cols-header
 ---
 
-## Another example
+## Another example (string)
+
+::left::
 
 ```csharp
-public bool IsValid(string input)
+static bool IsValid(IRule rule, string input)
 {
-  // ...
-  // some logic
-  // ...
-  return true;
+  var result = rule.Apply(input);
+  return result;
 }
 ```
 
-Wouldn't it be nice to catch all `input` errors early?
+<v-clicks>
 
-So, let's use a Faker library!
+- So, let's use reflection, or a Faker lib
+- we get a result like `foo bar 123` is invalid
+- This is where PBT can help
 
-Oh, then we'll get a result like `foo bar 123` is invalid.
+</v-clicks>
 
-Let's take the `IsValid` method for a spin.
+::right::
+
+```csharp
+class MockRule : IRule
+{
+  bool Apply(string s) => s == "abc";
+}
+
+MockRule rule = new ();
+
+[Fact]
+public void Is_valid()
+{
+  var actual = IsValid(rule, "abc");
+  Assert.True(actual);
+}
+
+[Fact]
+public void Is_not_valid()
+{
+  var actual = IsValid(rule, "foo bar 123");
+  Assert.False(actual);
+}
+```
+
+---
+
+## PBT Hello World - reversing a List
+
+```csharp
+public List<int> MyReverse(List<int> input)
+  => input.Reverse()
+```
+
+What are "Properties" of reversing a list?
+
+- result list has the same size
+- result first element is last element of input list
+- etc...
+
+---
+layout: image
+image: /images/Karl_Popper.jpg
+backgroundSize: contain
+---
+
+---
+layout: image
+image: /images/black_swan.jpg
+backgroundSize: contain
+---
+
+---
+
+## Anatomy of a Property-Based Test
+
+- Generator
+  - use a lot!
+- Shrinker
+  - as beginner: don't touch
+- Generator plus Shrinker equals Arbitrary
+
+If something fails we not only get a falsifiable result:
+
+We get the closest result that does not fail.
 
 ---
 src: ./pages/99-end.md
 ---
+
