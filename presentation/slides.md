@@ -114,14 +114,26 @@ public void Is_not_valid()
 
 ```csharp
 public List<int> MyReverse(List<int> input)
-  => input.Reverse()
+  => MyReverse(input)
 ```
 
 What are "Properties" of reversing a list?
 
 - result list has the same size
 - result first element is last element of input list
+- an empty list returns an empty list
+- reversing a list twice returns the original list
 - etc...
+
+---
+layout: image-left
+image: /images/developer_from_hell.png
+---
+
+### 😈 Developer From Hell (DFH)
+
+- Test-Driven Development (TDD)
+- Only implement enough to make the test pass
 
 ---
 layout: image
@@ -152,4 +164,3 @@ We get the closest result that does not fail.
 ---
 src: ./pages/99-end.md
 ---
-
