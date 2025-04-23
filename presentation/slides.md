@@ -87,10 +87,87 @@ image: /images/developer_from_hell.png
 - Only implement enough to make the test pass
 
 ---
-layout: image
-image: /images/Karl_Popper.jpg
-backgroundSize: contain
+layout: image-left
+image: /images/developer_from_hell.png
 ---
+
+### 😈 DFH 1/3
+
+```csharp
+[Fact]
+public void List_123_returns_321()
+{
+  List<int> input = [1, 2, 3];
+  var actual = MyReverse(input);
+  List<int> expected = [3, 2, 1];
+  Assert.Equivalent(expected, actual);;
+}
+```
+
+```csharp
+// 😈
+public List<int> MyReverse(List<int> input)
+  => [3, 2, 1];
+```
+
+---
+layout: image-left
+image: /images/developer_from_hell.png
+---
+
+### 😈 DFH 2/3
+
+```csharp
+[Fact]
+public void Empty_list_returns_empty_list()
+{
+  List<int> input = [];
+  var actual = MyReverse(input);
+  Assert.Equivalent([], actual);;
+}
+```
+
+```csharp
+// 😈
+public List<int> MyReverse(List<int> input)
+{
+  if (input.IsEmpty())
+    return [];
+  else
+    return [3, 2, 1];
+}
+```
+
+---
+layout: image-left
+image: /images/developer_from_hell.png
+---
+
+### 😈 DFH 3/3
+
+```csharp
+[Fact]
+public void List_678_returns_876()
+{
+  List<int> input = [6, 7, 8];
+  var actual = MyReverse(input);
+  List<int> expected = [8, 7, 6];
+  Assert.Equivalent(expected, actual);;
+}
+```
+
+```csharp
+// 😈
+public List<int> MyReverse(List<int> input)
+{
+  if (input.IsEmpty())
+    return [];
+  else if (input == [6, 7, 8])
+    return [8, 7, 6];
+  else
+    return [3, 2, 1];
+}
+```
 
 ---
 layout: image
@@ -99,18 +176,40 @@ backgroundSize: contain
 ---
 
 ---
+layout: image
+image: /images/Karl_Popper.jpg
+backgroundSize: contain
+---
+
+---
+
+## Philosophy teaches us...
+
+- we can't prove anything in natural science
+- we probably can't prove anything in business logic
+- but we can falsify: let's learn from natural science
+
+---
+
+## In Science...
+
+...we need an hypotheses
+
+- this is the most difficult part..
+- but, we need the same mind set!
+
+---
 
 ## Anatomy of a Property-Based Test
 
 - Generator
-  - use a lot!
+  - Describe the input data!
 - Shrinker
+  - Framework gives us minimal examples!
   - as beginner: don't touch
-- Generator plus Shrinker equals Arbitrary
+- Generator ➕ Shrinker 👉 Arbitrary
 
-If something fails we not only get a falsifiable result:
-
-We get the closest result that does not fail.
+If something fails we not only get a falsifiable result: We get the closest result that does not fail.
 
 ---
 src: ./pages/99-end.md
