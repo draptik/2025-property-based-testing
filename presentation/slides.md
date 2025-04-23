@@ -200,16 +200,27 @@ backgroundSize: contain
 
 ---
 
-## Anatomy of a Property-Based Test
+## Anatomy of a Property-Based Test framework
 
-- Generator
-  - Describe the input data!
-- Shrinker
-  - Framework gives us minimal examples!
-  - as beginner: don't touch
-- Generator ➕ Shrinker 👉 Arbitrary
+General terms:
+
+- **Generator**
+  - describe the input data!
+- **Shrinker**
+  - framework gives us minimal examples
+- **Generator** ➕ **Shrinker** 👉 **Arbitrary**
 
 If something fails we not only get a falsifiable result: We get the closest result that does not fail.
+
+---
+
+## What is the difference between CsCheck and FsCheck?
+
+There is no difference.
+
+Both can be used from C# and F#.
+
+The name references the implementation, not the intended usage.
 
 ---
 src: ./pages/99-end.md
