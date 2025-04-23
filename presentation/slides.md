@@ -60,61 +60,12 @@ public void Add_works(int a, int b, int expected)
 ```
 
 ---
-layout: two-cols-header
----
-
-## Another example (string)
-
-::left::
-
-```csharp
-static bool IsValid(IRule rule, string input)
-{
-  var result = rule.Apply(input);
-  return result;
-}
-```
-
-<v-clicks>
-
-- So, let's use reflection, or a Faker lib
-- we get a result like `foo bar 123` is invalid
-- This is where PBT can help
-
-</v-clicks>
-
-::right::
-
-```csharp
-class MockRule : IRule
-{
-  bool Apply(string s) => s == "abc";
-}
-
-MockRule rule = new ();
-
-[Fact]
-public void Is_valid()
-{
-  var actual = IsValid(rule, "abc");
-  Assert.True(actual);
-}
-
-[Fact]
-public void Is_not_valid()
-{
-  var actual = IsValid(rule, "foo bar 123");
-  Assert.False(actual);
-}
-```
-
----
 
 ## PBT Hello World - reversing a List
 
 ```csharp
 public List<int> MyReverse(List<int> input)
-  => MyReverse(input)
+  => input.Reverse(input)
 ```
 
 What are "Properties" of reversing a list?
