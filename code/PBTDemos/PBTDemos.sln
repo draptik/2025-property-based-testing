@@ -21,6 +21,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionF
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld.Tests", "tests\HelloWorld.Tests\HelloWorld.Tests.csproj", "{C8CBCEC1-95AD-4209-8F61-49FEDE5AF824}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{33AF56CF-51C9-4F7A-A88F-5A6C30A14491}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{315F077D-64F4-4CB8-BFEB-B3CD4BC237D4}"
+	ProjectSection(SolutionItems) = preProject
+		tests\Directory.Build.props = tests\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "src\HelloWorld\HelloWorld.csproj", "{A05ADD58-850F-4D83-93BE-50520B585678}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,10 +57,22 @@ Global
 		{18BDDAE0-B11A-4888-A724-60B143E7BCF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18BDDAE0-B11A-4888-A724-60B143E7BCF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18BDDAE0-B11A-4888-A724-60B143E7BCF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8CBCEC1-95AD-4209-8F61-49FEDE5AF824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8CBCEC1-95AD-4209-8F61-49FEDE5AF824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8CBCEC1-95AD-4209-8F61-49FEDE5AF824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8CBCEC1-95AD-4209-8F61-49FEDE5AF824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A05ADD58-850F-4D83-93BE-50520B585678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A05ADD58-850F-4D83-93BE-50520B585678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A05ADD58-850F-4D83-93BE-50520B585678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A05ADD58-850F-4D83-93BE-50520B585678}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{73C107D8-5699-4640-AA89-BD35BE9E1024} = {D51AF082-815B-492B-81B8-B3553BE9BF0C}
 		{EBE2A942-B158-4FC1-A975-21900FBB88F6} = {D51AF082-815B-492B-81B8-B3553BE9BF0C}
 		{18BDDAE0-B11A-4888-A724-60B143E7BCF4} = {7D01D08A-7514-4649-B6CF-98919B7E55B2}
+		{C8CBCEC1-95AD-4209-8F61-49FEDE5AF824} = {D51AF082-815B-492B-81B8-B3553BE9BF0C}
+		{33AF56CF-51C9-4F7A-A88F-5A6C30A14491} = {7D01D08A-7514-4649-B6CF-98919B7E55B2}
+		{315F077D-64F4-4CB8-BFEB-B3CD4BC237D4} = {D51AF082-815B-492B-81B8-B3553BE9BF0C}
+		{A05ADD58-850F-4D83-93BE-50520B585678} = {7D01D08A-7514-4649-B6CF-98919B7E55B2}
 	EndGlobalSection
 EndGlobal
