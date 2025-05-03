@@ -37,8 +37,6 @@ public int Add(int a, int b)
   => a + b;
 ```
 
-Imaging a difficult rule...
-
 ::right::
 
 Unit test:
@@ -57,14 +55,6 @@ More examples with parameterized test:
 [InlineData(0, 1, 1)]
 public void Add_works(int a, int b, int expected)
   => Add(a, b).Should().Be(expected);
-```
-
-```cs
-[Fact]
-public void Add_works_2()
-{
-  // TODO
-}
 ```
 
 ---
