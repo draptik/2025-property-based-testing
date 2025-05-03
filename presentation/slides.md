@@ -59,22 +59,13 @@ public void Add_works(int a, int b, int expected)
   => Add(a, b).Should().Be(expected);
 ```
 
----
-
-## PBT Hello World - reversing a List
-
-```csharp
-public List<int> MyReverse(List<int> input)
-  => input.Reverse(input)
+```cs
+[Fact]
+public void Add_works_2()
+{
+  // TODO
+}
 ```
-
-What are "Properties" of reversing a list?
-
-- result list has the same size
-- result first element is last element of input list
-- an empty list returns an empty list
-- reversing a list twice returns the original list
-- etc...
 
 ---
 layout: image-left
@@ -100,7 +91,7 @@ public void List_123_returns_321()
   List<int> input = [1, 2, 3];
   var actual = MyReverse(input);
   List<int> expected = [3, 2, 1];
-  Assert.Equivalent(expected, actual);;
+  Assert.Equivalent(expected, actual);
 }
 ```
 
@@ -123,7 +114,7 @@ public void Empty_list_returns_empty_list()
 {
   List<int> input = [];
   var actual = MyReverse(input);
-  Assert.Equivalent([], actual);;
+  Assert.Equivalent([], actual);
 }
 ```
 
@@ -131,10 +122,10 @@ public void Empty_list_returns_empty_list()
 // 😈
 public List<int> MyReverse(List<int> input)
 {
-  if (input.IsEmpty())
+  if (input.Count == 0)
     return [];
-  else
-    return [3, 2, 1];
+
+  return [3, 2, 1];
 }
 ```
 
@@ -152,7 +143,7 @@ public void List_678_returns_876()
   List<int> input = [6, 7, 8];
   var actual = MyReverse(input);
   List<int> expected = [8, 7, 6];
-  Assert.Equivalent(expected, actual);;
+  Assert.Equivalent(expected, actual);
 }
 ```
 
@@ -160,34 +151,39 @@ public void List_678_returns_876()
 // 😈
 public List<int> MyReverse(List<int> input)
 {
-  if (input.IsEmpty())
+  if (input.Count == 0)
     return [];
-  else if (input == [6, 7, 8])
+  if (input.SequenceEqual((List<int>)[6, 7, 8]))
     return [8, 7, 6];
-  else
-    return [3, 2, 1];
+
+  return [3, 2, 1];
 }
 ```
 
 ---
+
+## Let's find some properties
+
+- result list has the same size
+- result first element is last element of input list
+- an empty list returns an empty list
+- reversing a list twice returns the original list
+- etc...
+
+---
 layout: image
 image: /images/black_swan.jpg
-backgroundSize: contain
 ---
 
 ---
-layout: image
+layout: image-right
 image: /images/Karl_Popper.jpg
-backgroundSize: contain
 ---
 
----
+### Philosophy teaches us...
 
-## Philosophy teaches us...
-
-- we can't prove anything in natural science
-- we probably can't prove anything in business logic
-- but we can falsify: let's learn from natural science
+- we can't prove anything
+- but we can **falsify**
 
 ---
 
