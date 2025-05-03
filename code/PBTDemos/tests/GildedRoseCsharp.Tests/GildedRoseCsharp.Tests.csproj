@@ -5,7 +5,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\PBTDemos.GildedRose\PBTDemos.GildedRose.csproj" />
+    <ProjectReference Include="..\..\src\PBTDemos.GildedRose\PBTDemos.GildedRose.csproj"/>
   </ItemGroup>
 
 </Project>

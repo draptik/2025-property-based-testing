@@ -14,7 +14,7 @@ public class HelloWorldTests
       return [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
     }
 
-    if (input.SequenceEqual((List<int>)[6, 7, 8]))
+    if (input.SequenceEqual((List<int>) [6, 7, 8]))
     {
       return [8, 7, 6];
     }
@@ -28,7 +28,7 @@ public class HelloWorldTests
     List<int> input = [1, 2, 3];
     var actual = MyReverse(input);
     List<int> expected = [3, 2, 1];
-    Assert.Equivalent(expected, actual);;
+    Assert.Equivalent(expected, actual);
   }
 
   [Fact]
@@ -75,7 +75,10 @@ public class HelloWorldTests
     Assert.Equivalent(input, actual);
   }
 
-  private static int Add(int a, int b) => a + b;
+  private static int Add(int a, int b)
+  {
+    return a + b;
+  }
 
   [Fact]
   public void Add_1_and_2_returns_3()

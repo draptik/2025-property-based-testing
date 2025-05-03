@@ -1,4 +1,5 @@
 using System.Text;
+
 // ReSharper disable UnusedType.Global
 // ReSharper disable UnusedMember.Global
 

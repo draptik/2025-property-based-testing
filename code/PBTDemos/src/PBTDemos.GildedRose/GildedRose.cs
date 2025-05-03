@@ -1,6 +1,7 @@
 ﻿// ReSharper disable InconsistentNaming
 
 using System.Diagnostics.CodeAnalysis;
+
 // ReSharper disable ConvertToPrimaryConstructor
 // ReSharper disable ForCanBeConvertedToForeach
 // ReSharper disable ConvertToCompoundAssignment

@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <Compile Include="GildedRoseTests.fs" />
+    <Compile Include="GildedRoseTests.fs"/>
     <Compile Include="Program.fs"/>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\PBTDemos.GildedRose\PBTDemos.GildedRose.csproj" />
+    <ProjectReference Include="..\..\src\PBTDemos.GildedRose\PBTDemos.GildedRose.csproj"/>
   </ItemGroup>
 
 </Project>

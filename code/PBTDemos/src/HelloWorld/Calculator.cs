@@ -1,5 +1,8 @@
-﻿namespace HelloWorld;
+﻿using System.Diagnostics.CodeAnalysis;
 
+namespace HelloWorld;
+
+[SuppressMessage("Style", "IDE0046:Convert to conditional expression")]
 public static class Calculator
 {
   public static int Add_1(int a, int b)
