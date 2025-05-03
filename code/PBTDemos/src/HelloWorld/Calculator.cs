@@ -12,6 +12,15 @@ public static class Calculator
       return 3;
     }
 
+    return 0;
+  }
+  public static int Add_2(int a, int b)
+  {
+    if (a == 1 && b == 2)
+    {
+      return 3;
+    }
+
     if (a == 2 && b == 2)
     {
       return 4;
@@ -20,7 +29,7 @@ public static class Calculator
     return 0;
   }
 
-  public static int Add_2(int a, int b)
+  public static int Add_3(int a, int b)
   {
     return (a, b) switch
     {
@@ -32,7 +41,7 @@ public static class Calculator
     };
   }
 
-  public static int Add_3(int a, int b)
+  public static int Add_4(int a, int b)
   {
     return a * b;
   }
