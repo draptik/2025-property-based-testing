@@ -25,5 +25,5 @@ Slides 👇
 />
 
 <p style="font-size:0.75em">
-Image sources: <a href="https://pixabay.com/" target="_blank">pixabay.com</a> and <a href="https://perchance.org/ai-photo-generator" target="_blank">perchance.org/ai-photo-generator</a>
+Image sources: <a href="https://fsharpforfunandprofit.com/posts/property-based-testing-2/" target="_blank">FSharpForFunAndProfit</a>, <a href="https://pixabay.com/" target="_blank">pixabay.com</a> and <a href="https://perchance.org/ai-photo-generator" target="_blank">perchance.org/ai-photo-generator</a>
 </p>
