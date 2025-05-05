@@ -97,6 +97,10 @@ pre[class*='language-'] {
   content: 'C#';
 }
 
+[class~='language-csharp']::before {
+  content: 'C#';
+}
+
 :not(pre) > code {
   font-size: 0.9em;
   background: var(--prism-background);
