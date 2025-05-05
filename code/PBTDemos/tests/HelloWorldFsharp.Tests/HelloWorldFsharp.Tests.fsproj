@@ -7,7 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="CalculatorTests.fs" />
+        <Compile Include="ReverserTests.fs" />
         <Compile Include="FizzBuzzerTests.fs" />
+        <Compile Include="DemosTests.fs" />
         <Compile Include="Program.fs"/>
     </ItemGroup>
 
