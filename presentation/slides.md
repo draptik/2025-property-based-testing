@@ -178,6 +178,10 @@ public List<int> MyReverse(List<int> input)
 
 ## Live Coding
 
+- Setup without a framework:
+  - Adding 2 numbers
+  - Reversing a list
+
 ---
 
 ## PBT Framework Basics
@@ -257,10 +261,6 @@ public bool Reversing_a_list_twice_gives_the_original_list_v2(List<int> list) //
 
 ---
 
-## Live Coding
-
----
-
 ## Generators
 
 - data is generated via reflection by default
@@ -271,17 +271,74 @@ public bool Reversing_a_list_twice_gives_the_original_list_v2(List<int> list) //
 
 ## Live Coding
 
-F#..
+- FizzBuzz (C#, F#)
 
 ---
 
 ## What is the difference between CsCheck and FsCheck?
 
-There is no difference.
+The only difference is in the Generator syntax.
 
 Both can be used from C# and F#.
 
 The name references the implementation, not the intended usage.
+
+---
+
+## Strategies: "There and Back Again"
+
+- When you have a forward and reverse function, i. e. Serialize/Deserialize
+- Example: Reversing a list twice returns the original list
+
+---
+
+## Strategies: "Some Things Never Change"
+
+- When there is an invariant available
+- Example: Sorting or Mapping a list never changes the length of the list
+
+---
+
+## Strategies: "Test Oracle"
+
+- When 2 functions should return the same result
+- Example: Compare output of `LegacyFn` with `RefactoredFn`
+
+---
+
+## Strategies: "The More Things Change, The More They Stay The Same"
+
+- When there are idempotent properties
+- Example: Adding `0`, multiplying by `1`
+
+---
+
+## Strategies: "Nuclear Exception"
+
+- Just verify that the function does not throw an exception
+- Example: Generate valid inputs, and assert that no exception is thrown
+
+---
+
+## Generators: Also for custom types
+
+- Since most PBT frameworks use reflection under the hood, any type can be generated.
+
+---
+
+## Available for most languages
+
+- Just search for "Property Based Testing" and your language!
+
+---
+
+## Conclusion
+
+- Property-based testing is a technique for testing statements of the type:
+  **For all x that satisfy some precondition then some predicates holds**
+- It can give you confidence that your code behaves correctly across a wider range of inputs.
+- It can help you find bugs in your code resulting from inputs you never would have thought to test.
+- This technique can be used alongside existing unit tests.
 
 ---
 src: ./pages/99-end.md

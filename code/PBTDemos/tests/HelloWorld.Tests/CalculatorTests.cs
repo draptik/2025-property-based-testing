@@ -66,7 +66,7 @@ public class CalculatorTests
   public void Add_two_random_numbers_returns_the_sum_2()
   {
     var rnd = new Random();
-    foreach (var _ in Enumerable.Range(1, 100))
+    foreach (var _ in Enumerable.Range(1, 100)) // ⚠️
     {
       var a = rnd.Next(100);
       var b = rnd.Next(100);
