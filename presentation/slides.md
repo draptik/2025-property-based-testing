@@ -32,7 +32,6 @@ src: ./pages/01-intro.md
   - Vocabulary w/ examples
   - introduction to Generators
   - more examples w/ Generators
-- Comparing FsCheck and CsCheck
 - PBT Strategies
 - Summary
 
@@ -230,7 +229,6 @@ public void Reversing_a_list_twice_gives_the_original_list_v1()
   // The lambda creates the test data input `list`
   Prop.ForAll((List<int> list) => CheckFn(list))  // ⚠️
     .QuickCheckThrowOnFailure();                  // ⚠️
-
 }
 ```
 
@@ -264,8 +262,46 @@ public bool Reversing_a_list_twice_gives_the_original_list_v2(List<int> list) //
 ## Generators
 
 - data is generated via reflection by default
-- generators can be fine-tuned
-- FizzBuzz: Wrong-Than-Ok
+- generators can be fine-tuned: <https://fscheck.github.io/FsCheck//TestData.html>
+- Example: `Gen.Choose`
+
+```csharp
+// Generate random numbers between 1 and 100
+// which are divisible be 3
+var arb = Arb.From(
+  Gen.Choose(1, 100)
+    .Select(x => x * 3));
+```
+
+- don't forget to wrap the Generator in an Arbitrary...
+
+---
+
+## Shrinking
+
+```csharp
+private static bool IsValid(string s)
+{
+  return s.StartsWith("a");
+}
+
+[Property]
+public void Validation_works(string input)
+{
+  Assert.True(IsValid(input));
+}
+```
+
+- returns a **minimal** falsifiable example:
+
+```txt
+Falsifiable, after 1 test (2 shrinks) (15234498303011185687,2773856807235509173)
+Last step was invoked with size of 2 and seed of (16350581963149029034,15962072172286382299):
+Original:
+"\012"" (At least one control character has been escaped as a char code, e.g. \023)
+Shrunk:
+""
+```
 
 ---
 
@@ -290,12 +326,38 @@ The name references the implementation, not the intended usage.
 - When you have a forward and reverse function, i. e. Serialize/Deserialize
 - Example: Reversing a list twice returns the original list
 
+```fsharp
+[<Property>]
+let ``reversing a list twice returns the original list`` (aList: int list) =
+  let actual = aList |> List.rev |> List.rev
+  let expected = aList
+  actual = expected
+```
+
+<img
+  class="absolute bottom-20 left-30 h-40"
+  src="/images/property_inverse.png"
+/>
+
 ---
 
 ## Strategies: "Some Things Never Change"
 
 - When there is an invariant available
 - Example: Sorting or Mapping a list never changes the length of the list
+
+```fsharp
+[<Property>]
+let ``sorting a list does not change its size`` (aList: int list) =
+  let actual = aList |> List.sort |> List.length
+  let expected = aList.Length
+  actual = expected
+```
+
+<img
+  class="absolute bottom-20 left-30 h-30"
+  src="/images/property_invariant.png"
+/>
 
 ---
 
@@ -304,12 +366,41 @@ The name references the implementation, not the intended usage.
 - When 2 functions should return the same result
 - Example: Compare output of `LegacyFn` with `RefactoredFn`
 
+```fsharp
+[<Property>]
+let ``test oracle example`` (c: int, d: int) =
+  let add1 a b = a + b
+  let add2 a b = a * b
+  let actual1 = add1 c d
+  let actual2 = add2 c d
+  actual1 = actual2
+```
+
+<img
+  class="absolute bottom-10 left-30 h-40"
+  src="/images/property_test_oracle.png"
+/>
+
 ---
 
 ## Strategies: "The More Things Change, The More They Stay The Same"
 
 - When there are idempotent properties
 - Example: Adding `0`, multiplying by `1`
+
+```fsharp
+[<Property>]
+let ``adding zero is does not change the input`` (number: int) =
+  let add a b = a + b
+  let actual = add number 0
+  let expected = number
+  actual = expected
+```
+
+<img
+  class="absolute bottom-10 left-30 h-30"
+  src="/images/property_idempotence.png"
+/>
 
 ---
 
@@ -318,21 +409,61 @@ The name references the implementation, not the intended usage.
 - Just verify that the function does not throw an exception
 - Example: Generate valid inputs, and assert that no exception is thrown
 
+```fsharp
+[<Property>]
+let ``nuclear explosion - function does not throw`` (str: NonEmptyString) =
+  let fn s = if String.IsNullOrEmpty(s) then failwith "ups" else s
+  fn str.Get = str.Get
+```
+
+---
+layout: two-cols-header
 ---
 
 ## Generators: Also for custom types
 
+::left::
+
 - Since most PBT frameworks use reflection under the hood, any type can be generated.
+
+::right::
+
+```fsharp
+type ItemArb =
+  static member Generate() =
+    gen {
+      let! name =
+        Gen.elements [
+          "Aged Brie"
+          "Sulfuras, Hand of Ragnaros"
+          "Backstage passes to a TAFKAL80ETC concert"
+        ]
+      let! sellIn = Gen.choose (1, 100)
+      let! quality =
+        Gen.choose (1, System.Int32.MaxValue)
+        |> Gen.map PositiveInt
+      return generateItem name sellIn quality
+    }
+    |> Arb.fromGen
+```
 
 ---
 
 ## Available for most languages
 
-- Just search for "Property Based Testing" and your language!
+Just search for "Property Based Testing" and your language!
+
+- Haskell: [QuickCheck](https://hackage.haskell.org/package/QuickCheck)
+- Python: [Hypothesis](https://hypothesis.readthedocs.io/en/latest/)
+- Scala: [ScalaCheck](https://github.com/typelevel/scalacheck)
+- JavaScript: [fast-check](https://github.com/dubzzz/fast-check)
+- Clojure: [Test.check](https://github.com/clojure/test.check)
+- Java: [jqwik](https://jqwik.net/)
+- etc
 
 ---
 
-## Conclusion
+## Summary
 
 - Property-based testing is a technique for testing statements of the type:
   **For all x that satisfy some precondition then some predicates holds**
