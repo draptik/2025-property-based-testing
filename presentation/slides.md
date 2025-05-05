@@ -311,16 +311,6 @@ Shrunk:
 
 ---
 
-## What is the difference between CsCheck and FsCheck?
-
-The only difference is in the Generator syntax.
-
-Both can be used from C# and F#.
-
-The name references the implementation, not the intended usage.
-
----
-
 ## Strategies: "There and Back Again"
 
 - When you have a forward and reverse function, i. e. Serialize/Deserialize
@@ -449,16 +439,28 @@ type ItemArb =
 
 ---
 
+## PBT Frameworks for .NET
+
+- [FsCheck](https://github.com/fscheck/FsCheck): The most popular
+- [Hedgehog](https://github.com/hedgehogqa/fsharp-hedgehog): also worth a look
+- [CsCheck](https://github.com/AnthonyLloyd/CsCheck): the new kid on the block
+
+All can be used from C# and F#.
+
+The frameworks mainly differ in syntax.
+
+---
+
 ## Available for most languages
 
 Just search for "Property Based Testing" and your language!
 
 - Haskell: [QuickCheck](https://hackage.haskell.org/package/QuickCheck)
 - Python: [Hypothesis](https://hypothesis.readthedocs.io/en/latest/)
-- Scala: [ScalaCheck](https://github.com/typelevel/scalacheck)
 - JavaScript: [fast-check](https://github.com/dubzzz/fast-check)
-- Clojure: [Test.check](https://github.com/clojure/test.check)
 - Java: [jqwik](https://jqwik.net/)
+- Scala: [ScalaCheck](https://github.com/typelevel/scalacheck)
+- Clojure: [Test.check](https://github.com/clojure/test.check)
 - etc
 
 ---
