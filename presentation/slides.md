@@ -23,6 +23,20 @@ src: ./pages/01-intro.md
 ---
 
 ---
+
+## Roadmap
+
+- Problem w/ Example-Based Testing
+- Examples solving the problem manually
+- Property-Based Testing Frameworks
+  - Vocabulary w/ examples
+  - introduction to Generators
+  - more examples w/ Generators
+- Comparing FsCheck and CsCheck
+- PBT Strategies
+- Summary
+
+---
 layout: two-cols-header
 ---
 
@@ -81,7 +95,7 @@ public void List_123_returns_321()
   List<int> input = [1, 2, 3];
   var actual = MyReverse(input);
   List<int> expected = [3, 2, 1];
-  Assert.Equivalent(expected, actual);
+  Assert.Equal(expected, actual);
 }
 ```
 
@@ -104,7 +118,7 @@ public void Empty_list_returns_empty_list()
 {
   List<int> input = [];
   var actual = MyReverse(input);
-  Assert.Equivalent([], actual);
+  Assert.Equal([], actual);
 }
 ```
 
@@ -133,7 +147,7 @@ public void List_678_returns_876()
   List<int> input = [6, 7, 8];
   var actual = MyReverse(input);
   List<int> expected = [8, 7, 6];
-  Assert.Equivalent(expected, actual);
+  Assert.Equal(expected, actual);
 }
 ```
 
@@ -152,7 +166,7 @@ public List<int> MyReverse(List<int> input)
 
 ---
 
-## Let's find some properties
+## Let's find some properties for reversing a list
 
 - result list has the same size
 - result first element is last element of input list
@@ -161,42 +175,103 @@ public List<int> MyReverse(List<int> input)
 - etc...
 
 ---
-layout: image
-image: /images/black_swan.jpg
----
 
----
-layout: image-right
-image: /images/Karl_Popper.jpg
----
-
-### Philosophy teaches us...
-
-- we can't prove anything
-- but we can **falsify**
+## Live Coding
 
 ---
 
-## In Science...
-
-...we need an hypotheses
-
-- this is the most difficult part..
-- but, we need the same mind set!
-
----
-
-## Anatomy of a Property-Based Test framework
-
-General terms:
+## PBT Framework Basics
 
 - **Generator**
   - describe the input data!
 - **Shrinker**
   - framework gives us minimal examples
 - **Generator** ➕ **Shrinker** 👉 **Arbitrary**
+- If something fails we not only get a falsifiable result: We get the closest result that does not fail.
+- Some PBT Frameworks are called "Hypothesis" (i. e. in Python). Why?
 
-If something fails we not only get a falsifiable result: We get the closest result that does not fail.
+---
+layout: image-right
+image: /images/Karl_Popper.jpg
+---
+
+### Philosophy and natural sciences teach us...
+
+- we can't prove anything
+- but we can **falsify** a **Hypothesis**
+- finding a good hypothesis is the difficult part
+
+---
+layout: image
+image: /images/black_swan.jpg
+---
+
+---
+
+## Hello World FsCheck (1/2)
+
+```csharp
+using FsCheck;        // ⚠️
+using FsCheck.Fluent; // ⚠️
+
+[Fact]
+public void Reversing_a_list_twice_gives_the_original_list_v1()
+{
+  // This "Property" must return bool
+  static bool CheckFn(List<int> list)
+  {
+    return MyReverse(MyReverse(list)).SequenceEqual(list);
+  }
+
+  // The lambda creates the test data input `list`
+  Prop.ForAll((List<int> list) => CheckFn(list))  // ⚠️
+    .QuickCheckThrowOnFailure();                  // ⚠️
+
+}
+```
+
+- `Prop.ForAll`: creates sample data
+- `QuickCheckThrowOnFailure`: throws on first failure
+
+---
+
+## Hello World FsCheck (2/2)
+
+```csharp
+using FsCheck;        // ⚠️
+using FsCheck.Fluent; // ⚠️
+using FsCheck.Xunit;  // ⚠️
+
+[Property] // ⚠️
+public bool Reversing_a_list_twice_gives_the_original_list_v2(List<int> list) // ⚠️
+{
+  var actual = MyReverse(MyReverse(list));
+  var expected = list;
+  return actual.SequenceEqual(expected);
+}
+```
+
+- use `Property` attribute
+- test must return `bool`
+- test must have input parameter(s)
+
+---
+
+## Live Coding
+
+---
+
+## Generators
+
+- data is generated via reflection by default
+- generators can be fine-tuned
+- FizzBuzz: Wrong-Than-Ok
+
+---
+
+## Live Coding
+
+F#..
 
 ---
 

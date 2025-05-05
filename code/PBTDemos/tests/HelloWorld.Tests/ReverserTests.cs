@@ -38,7 +38,7 @@ public class ReverserTests
     List<int> input = [1, 2, 3];
     var actual = MyReverse(input);
     var expected = input.Count;
-    Assert.Equivalent(expected, actual.Count);
+    Assert.Equal(expected, actual.Count);
   }
 
   [Fact]

@@ -8,4 +8,8 @@
     <ProjectReference Include="..\..\src\HelloWorld\HelloWorld.csproj"/>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" />
+  </ItemGroup>
+
 </Project>
