@@ -465,6 +465,17 @@ Just search for "Property Based Testing" and your language!
 
 ---
 
+## When shouldn't you use PBT?
+
+- When you don't have standard unit tests
+- When standard unit tests are sufficient
+- When you want to test a specific case
+- When you can't identify suitable properties
+- When your models are not suitable
+- When your SUT is slow
+
+---
+
 ## Summary
 
 - Property-based testing is a technique for testing statements of the type:
