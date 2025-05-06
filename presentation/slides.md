@@ -415,6 +415,7 @@ layout: two-cols-header
 ::left::
 
 - Since most PBT frameworks use reflection under the hood, any type can be generated.
+- Example: Gilded Rose
 
 ::right::
 
