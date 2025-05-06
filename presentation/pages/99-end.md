@@ -9,18 +9,24 @@
 
 Slides 👇
 
-- QR Code or
+- QR Code (top) or
 - <https://draptik.github.io/2025-05-adc-property-based-testing/>
 - sample code:
   <https://github.com/draptik/2025-property-based-testing>
+- **Feedback: QR Code (bottom)**
 
 <img
-  class="absolute top-10 right-30 h-70"
+  class="absolute top-10 right-30 h-60"
   src="/images/slides.png"
 />
 
 <img
-  class="absolute bottom-20 right-50 h-30 custom-slow-pulse"
+  class="absolute bottom-20 right-20 h-50"
+  src="/images/feedback-adc.png"
+/>
+
+<img
+  class="absolute bottom-10 right-15 h-10 custom-slow-pulse"
   src="/images/anti-nazi.png"
 />
 
