@@ -30,7 +30,7 @@ src: ./pages/01-intro.md
 - Examples solving the problem manually
 - Property-Based Testing Frameworks
   - Vocabulary w/ examples
-  - introduction to Generators
+  - introduction to Generators & Shrinkers
   - more examples w/ Generators
 - PBT Strategies
 - Summary
