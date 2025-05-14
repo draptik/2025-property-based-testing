@@ -3,8 +3,8 @@ theme: ./mathema-2023
 defaults:
   layout: "default-with-footer"
 title: Property-Based Testing
-occasion: "ADC 2025"
-occasionLogoUrl: "./images/logo-adc.png"
+occasion: "MATHEMA Campus 2025"
+occasionLogoUrl: "./images/logo-mathema-campus.svg"
 company: "MATHEMA GmbH"
 presenter: "Patrick Drechsler"
 contact: "patrick.drechsler@mathema.de"
