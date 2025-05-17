@@ -3,8 +3,8 @@ theme: ./mathema-2023
 defaults:
   layout: "default-with-footer"
 title: Property-Based Testing
-occasion: "SWEC 2025"
-occasionLogoUrl: "./images/logo-swec.png"
+occasion: "MATHEMA Campus 2025"
+occasionLogoUrl: "./images/logo-mathema-campus.svg"
 company: "MATHEMA GmbH"
 presenter: "Patrick Drechsler"
 contact: "patrick.drechsler@mathema.de"

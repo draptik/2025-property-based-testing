@@ -10,7 +10,7 @@
 Slides 👇
 
 - QR Code or
-- <https://draptik.github.io/2025-05-swec-property-based-testing/>
+- <https://draptik.github.io/2025-05-mathema-campus-property-based-testing/>
 - sample code:
   <https://github.com/draptik/2025-property-based-testing>
 
