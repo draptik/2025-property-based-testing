@@ -174,10 +174,13 @@ public List<int> MyReverse(List<int> input)
 - etc...
 
 ---
+layout: image-right
+image: /images/cute-zombie3.png
+---
 
 ## Live Coding
 
-- Setup without a framework:
+- Setup **without** a framework:
   - Adding 2 numbers
   - Reversing a list
 
@@ -303,6 +306,9 @@ Shrunk:
 ""
 ```
 
+---
+layout: image-right
+image: /images/cute-zombie2.jpg
 ---
 
 ## Live Coding

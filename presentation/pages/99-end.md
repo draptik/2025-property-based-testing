@@ -15,12 +15,12 @@ Slides 👇
   <https://github.com/draptik/2025-property-based-testing>
 
 <img
-  class="absolute top-10 right-30 h-60"
+  class="absolute top-10 right-20 h-70"
   src="/images/slides.png"
 />
 
 <img
-  class="absolute bottom-10 right-15 h-10 custom-slow-pulse"
+  class="absolute bottom-15 right-30 h-30 custom-slow-pulse"
   src="/images/anti-nazi.png"
 />
 
