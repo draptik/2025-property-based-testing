@@ -1,6 +1,6 @@
-# Property-based Testing
+# Property-Based Testing
 
-### Eine Einführung in FsCheck und CsCheck
+### Eine Einführung in .NET
 
 Patrick Drechsler
 

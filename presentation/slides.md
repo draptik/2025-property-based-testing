@@ -23,6 +23,9 @@ src: ./pages/01-intro.md
 ---
 
 ---
+layout: image-left
+image: "/images/roadmap.png"
+---
 
 ## Roadmap
 
@@ -313,6 +316,7 @@ image: /images/cute-zombie2.jpg
 
 ## Live Coding
 
+- Shrinker Demos
 - FizzBuzz (C#, F#)
 
 ---
@@ -413,10 +417,13 @@ let ``adding zero is does not change the input`` (number: int) =
 
 ```fsharp
 [<Property>]
-let ``nuclear explosion - function does not throw`` (str: NonEmptyString) =
-  let fn s = if String.IsNullOrEmpty(s) then failwith "ups" else s
-  fn str.Get = str.Get
+// Replace `str: NonEmptyString` with assumed valid input
+let ``myFunction does not throw`` (str: NonEmptyString) =
+  let myFunction s = if String.IsNullOrEmpty(s) then failwith "ups" else s
+  myFunction str.Get = str.Get
 ```
+
+- Great for API validations
 
 ---
 layout: two-cols-header
@@ -498,7 +505,7 @@ Just search for "Property Based Testing" and your language!
 <v-clicks>
 
 - Property-based testing is a technique for testing statements of the type:
-  **For all x that satisfy some precondition then some predicates holds**
+  - **For all x that satisfy some precondition then some predicates holds**
 - It can give you confidence that your code behaves correctly across a wider range of inputs.
 - It can help you find bugs in your code resulting from inputs you never would have thought to test.
 - This technique can be used alongside existing unit tests.
