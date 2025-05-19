@@ -216,7 +216,7 @@ image: /images/black_swan.jpg
 
 ## Hello World FsCheck (1/2)
 
-```csharp
+```csharp {all|1-2|8-11|13-15|all}
 using FsCheck;        // ⚠️
 using FsCheck.Fluent; // ⚠️
 
@@ -242,7 +242,7 @@ public void Reversing_a_list_twice_gives_the_original_list_v1()
 
 ## Hello World FsCheck (2/2)
 
-```csharp
+```csharp {all|3-5|3-6|all}
 using FsCheck;        // ⚠️
 using FsCheck.Fluent; // ⚠️
 using FsCheck.Xunit;  // ⚠️
