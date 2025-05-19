@@ -319,7 +319,7 @@ image: /images/cute-zombie2.jpg
 
 ## Strategies: "There and Back Again"
 
-- When you have a forward and reverse function, i. e. Serialize/Deserialize
+- When you have a **forward and backward** function, i. e. Serialize/Deserialize
 - Example: Reversing a list twice returns the original list
 
 ```fsharp
@@ -339,7 +339,7 @@ let ``reversing a list twice returns the original list`` (aList: int list) =
 
 ## Strategies: "Some Things Never Change"
 
-- When there is an invariant available
+- When there is an **invariant** available
 - Example: Sorting or Mapping a list never changes the length of the list
 
 ```fsharp
@@ -381,7 +381,7 @@ let ``test oracle example`` (c: int, d: int) =
 
 ## Strategies: "The More Things Change, The More They Stay The Same"
 
-- When there are idempotent properties
+- When there are **idempotent** properties
 - Example: Adding `0`, multiplying by `1`
 
 ```fsharp
@@ -398,11 +398,17 @@ let ``adding zero is does not change the input`` (number: int) =
   src="/images/property_idempotence.png"
 />
 
+<style>
+.slidev-layout h2 {
+  line-height: 3rem;
+}
+</style>
+
 ---
 
 ## Strategies: "Nuclear Exception"
 
-- Just verify that the function does not throw an exception
+- Just verify that the function **does not throw an exception**
 - Example: Generate valid inputs, and assert that no exception is thrown
 
 ```fsharp
@@ -474,6 +480,8 @@ Just search for "Property Based Testing" and your language!
 
 ## When shouldn't you use PBT?
 
+<v-clicks>
+
 - When you don't have standard unit tests
 - When standard unit tests are sufficient
 - When you want to test a specific case
@@ -481,15 +489,21 @@ Just search for "Property Based Testing" and your language!
 - When your models are not suitable
 - When your SUT is slow
 
+</v-clicks>
+
 ---
 
 ## Summary
+
+<v-clicks>
 
 - Property-based testing is a technique for testing statements of the type:
   **For all x that satisfy some precondition then some predicates holds**
 - It can give you confidence that your code behaves correctly across a wider range of inputs.
 - It can help you find bugs in your code resulting from inputs you never would have thought to test.
 - This technique can be used alongside existing unit tests.
+
+</v-clicks>
 
 ---
 src: ./pages/99-end.md
