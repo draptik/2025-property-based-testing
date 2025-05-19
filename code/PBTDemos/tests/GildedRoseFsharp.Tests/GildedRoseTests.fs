@@ -19,16 +19,6 @@ let ``quality remains between 0 and 50 after update`` (name: string, sellIn: int
   actual.Quality >= 0 && actual.Quality <= 50
 
 [<Property>]
-let ``sellIn decreases by 1 unless it is Sulfuras`` (name: string, sellIn: int, quality: PositiveInt) =
-  let item = generateItem name sellIn quality
-  let actual = item.UpdateQuality()
-
-  if name = "Sulfuras, Hand of Ragnaros" then
-    actual.SellIn = sellIn
-  else
-    actual.SellIn = sellIn - 1
-
-[<Property>]
 let ``aged brie quality increases but not beyond 50`` (sellIn: PositiveInt, quality: PositiveInt) =
   let item = generateItem "Aged Brie" sellIn.Get quality
   let actual = item.UpdateQuality()
@@ -37,6 +27,16 @@ let ``aged brie quality increases but not beyond 50`` (sellIn: PositiveInt, qual
     actual.Quality = quality.Get + 1
   else
     actual.Quality = 50
+
+[<Property>]
+let ``sellIn decreases by 1 unless it is Sulfuras (v1)`` (name: string, sellIn: int, quality: PositiveInt) =
+  let item = generateItem name sellIn quality
+  let actual = item.UpdateQuality()
+
+  if name = "Sulfuras, Hand of Ragnaros" then
+    actual.SellIn = sellIn
+  else
+    actual.SellIn = sellIn - 1
 
 type ItemArb =
   static member Generate() =
