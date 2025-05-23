@@ -167,14 +167,23 @@ public List<int> MyReverse(List<int> input)
 ```
 
 ---
+layout: image-right
+image: '/images/reverse.png'
+---
 
-## Let's find some properties for reversing a list
+## Let's find some properties for reversing a list...
 
 - result list has the same size
 - result first element is last element of input list
 - an empty list returns an empty list
 - reversing a list twice returns the original list
 - etc...
+
+<style>
+.slidev-layout h2 {
+  line-height: 2.5rem;
+}
+</style>
 
 ---
 layout: image-right
@@ -207,7 +216,7 @@ image: /images/Karl_Popper.jpg
 ### Philosophy and natural sciences teach us...
 
 - we can't prove anything
-- but we can **falsify** a **Hypothesis**
+- but we can **falsify** a **Hypothesis** (["Kritischer Rationalismus"](https://de.wikipedia.org/wiki/Falsifikationismus))
 - finding a good hypothesis is the difficult part
 
 ---
