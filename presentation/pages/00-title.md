@@ -1,6 +1,6 @@
 # Property-Based Testing
 
-### Eine Einführung in .NET
+### in .NET
 
 Patrick Drechsler
 
