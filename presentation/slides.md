@@ -3,8 +3,8 @@ theme: ./mathema-2023
 defaults:
   layout: "default-with-footer"
 title: Property-Based Testing
-occasion: "MATHEMA Campus 2025"
-occasionLogoUrl: "./images/logo-mathema-campus.svg"
+occasion: "SoCraTes-Day-Franken 2025"
+occasionLogoUrl: "./images/logo_socrates.png"
 company: "MATHEMA GmbH"
 presenter: "Patrick Drechsler"
 contact: "patrick.drechsler@mathema.de"

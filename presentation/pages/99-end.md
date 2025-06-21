@@ -1,5 +1,7 @@
 # Thank You!
 
+<div style="font-size: 0.8em">
+
 - <mdi-email /> <patrick.drechsler@mathema.de>
 - <logos-github-icon /> <https://github.com/draptik>
 - <mdi-web /> <https://draptik.github.io/talks/>
@@ -7,10 +9,12 @@
 - <logos-bluesky/> <https://bsky.app/profile/drechsler.bsky.social>
 - <logos-linkedin-icon /> <https://www.linkedin.com/in/patrick-drechsler-draptik/>
 
+</div>
+
 Slides 👇
 
 - QR Code or
-- <https://draptik.github.io/2025-05-mathema-campus-property-based-testing/>
+- <https://draptik.github.io/2025-06-socrates-day-franken-pbt/>
 - sample code:
   <https://github.com/draptik/2025-property-based-testing>
 
