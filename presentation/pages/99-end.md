@@ -14,7 +14,7 @@
 Slides 👇
 
 - QR Code or
-- <https://draptik.github.io/2025-06-socrates-day-franken-pbt/>
+- <https://draptik.github.io/2025-07-socrates-property-based-testing/>
 - sample code:
   <https://github.com/draptik/2025-property-based-testing>
 
