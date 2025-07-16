@@ -8,4 +8,4 @@
 #qrencode -s 6 -l H -o "../public/images/slides.png" "https://draptik.github.io/2025-05-swec-property-based-testing"
 #qrencode -s 6 -l H -o "../public/images/slides.png" "https://draptik.github.io/2025-05-mathema-campus-property-based-testing"
 # qrencode -s 6 -l H -o "../public/images/slides.png" "https://draptik.github.io/2025-06-socrates-day-franken-pbt"
-qrencode -s 6 -l H -o "../public/images/slides.png" "https://draptik.github.io/2025-07-socrates-property-based-testing"
+qrencode -s 6 -l H -o "../public/images/slides.png" "https://draptik.github.io/2025-07-socrates-de-property-based-testing"
